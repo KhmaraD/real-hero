@@ -26,7 +26,7 @@ board.addEventListener('click', (event) => {
         event.target.remove();
         createRandomCircle();
     }
-}) 
+})
 
 function startGame() {
     setInterval(decreaseTime, 1000);
@@ -44,7 +44,7 @@ function decreaseTime() {
         }
         setTime(current);
     }
-    
+
 }
 
 function setTime(value) {
@@ -58,10 +58,10 @@ function finishGame() {
 
 function createRandomCircle() {
     const circle = document.createElement('div');
-    const size = getRandomNember(10, 60);
+    const size = getRandomNumber(10, 60);
     const {width, height} = board.getBoundingClientRect();
-    const x = getRandomNember(0, width-size);
-    const y = getRandomNember(0, height-size);
+    const x = getRandomNumber(0, width-size);
+    const y = getRandomNumber(0, height-size);
     const color = getRandomColor();
 
     circle.classList.add('circle');
@@ -74,7 +74,7 @@ function createRandomCircle() {
     board.append(circle);
 }
 
-function getRandomNember(min, max) {
+function getRandomNumber(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 }
 
